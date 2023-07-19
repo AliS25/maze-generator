@@ -1,0 +1,113 @@
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100svh;
+  width: 100svw;
+  background-color: #000;
+  background-image: linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444),
+    linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%, #444);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+}
+
+#grid {
+  /* margin: auto; */
+  display: grid;
+  width: 75vh;
+  height: 75vh;
+  background-color: white;
+}
+
+.squares {
+  border: 3px solid black;
+  height: 49px;
+}
+
+/* Styling for the start square */
+.start-square {
+  background-color: #4CAF50;
+}
+
+.end-square {
+  background-color: tomato;
+}
+
+.start-square,
+.end-square {
+  color: white;
+  /* Vertically align text inside the maze square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Optionally, horizontally align the text */
+
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  color: white;
+  /* padding: 10px 20px; */
+
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+.button-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#exposition {
+  width: 30vw;
+  margin-left: 1vw;
+  margin-right: 2vw;
+}
+
+#technical {
+  width: 30vw;
+  margin-right: 1vw;
+  margin-left: 2vw;
+}
+
+section {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  margin-top: 3%;
+  border: 2px solid #444;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #f2f2f2;
+  color: #444;
+  border-radius: 10px;
+  height: 92%;
+}

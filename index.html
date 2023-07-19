@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Final Project</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <div id="root">
+    <div class="main-container">
+      <div id="exposition">
+        <section>
+          <h2>Exposition</h2>
+          <p> This is an interactive demonstration of maze generation using a really cool application of Kruskal's
+            algorithm.
+            The minimum spanning tree algorithm is used creatively in the task of random maze generation.</p>
+
+          <p> Kruskal's algorithm is used to compute a minimum spanning tree from a weighted graph.
+            The input is a weighted graph meaning the edges have weights. The output is a set of edges that connects all
+            the vertices and is the minimal such set.
+          </p>
+
+          <p>
+            Kruskal's algorithm:
+          <ol>
+            <li> Maintain a collection of components. Initially, each vertex is its own component. </li>
+            <li> Iterate edges in order of increasing weight. </li>
+            <li> If the current edge connects 2 different components then add it to the
+              set of edges to be returned and merge the 2 components, otherwise ignore the edge.</li>
+          </ol>
+          </p>
+          <p>
+            The algorithm I implemented is a randomized version of Kruskal's, so instead of selecting
+            the edge with the lowest weight, you assign random weights to edges. These weights are
+            visualized through colors where red is the lightest and it is a spectrum going all the
+            way up to the heaviest which is blue. Applying Kruskal's, the result is a convincing maze!
+          </p>
+          <a href="https://weblog.jamisbuck.org/2011/1/3/maze-generation-kruskal-s-algorithm"
+            title="reference to inspirational material" target="_blank">Inspirational material</a>
+        </section>
+      </div>
+      <div id="user-input">
+        <h1>Maze Generation Using Kruskal's Algorithm </h1>
+        <div id="grid">
+        </div>
+        <div class="button-container">
+          <button onclick="step()">Step</button>
+          <button onclick="animateK()">Animate</button>
+          <button onclick="resetK()">Reset</button>
+        </div>
+      </div>
+      <div id="technical">
+        <section>
+          <h2>Technical Development</h2>
+          <p>The starting step in the development of this site was the visualization of the initial grid. In order to do
+            that
+            I created a div in the html for the grid and gave it the display value "grid" in css. In JavaScript:</p>
+          <p>
+          <ul>
+            <li>I assigned each square an id corresponding to its row and column.</li>
+            <li>I also created a list of edges where each edge is a list of the ids of the 2 squares it connects.</li>
+            The algorithm requires that you keep track of components and be able to merge components. At the start, I
+            tried using two lists.
+            One list to keep track of the leader of each vertex. The other is to keep track of the followers of each
+            vertex.
+            However, using lists was complicated and maps were the better option.
+            <li>So I created a leaders map where the key is a vertex and the value is its leader.</li>
+            <li>I created a followers map where the key is a vertex and the value is a list of its followers.</li>
+            <li>So to check if the 2 components are different I would compare the leaders.</li>
+            <li>To merge 2 components I would check which leader of the 2 vertices connected by the edge I'm considering
+              has more followers.</li>
+            <li>I would select the one with fewer followers, add it and its followers to the followers of the other
+              leader,
+              and change its leader and its followers' leader to be the other leader.</li>
+          </ul>
+          The algorithmic challenge was maintaining the components.
+          Initially, I tried updating the leaders map first then the followers map
+          but that resulted in the duplication of followers and the algorithm crashing.
+          Being able to update both the leaders and followers in order to create one connected component was a
+          challenge.
+
+          </p>
+        </section>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+</html>

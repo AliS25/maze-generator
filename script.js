@@ -2,8 +2,9 @@
 const grid = document.querySelector("#grid")
 //nxn maze
 const n = 10;
-//split the grid into n columns
+//split the grid into n row and columns
 grid.style.gridTemplateColumns = "repeat(" + n + ", 1fr)";
+grid.style.gridTemplateRows = "repeat(10, 1fr)";
 //Maintain the leader of each vertex
 let leadersMap = new Map()
 //Maintain the follower of each vertex

@@ -21,7 +21,6 @@
 
 .squares {
   border: 3px solid black;
-  height: 49px;
 }
 
 /* Styling for the start square */
@@ -40,8 +39,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Optionally, horizontally align the text */
-
 }
 
 h1 {
